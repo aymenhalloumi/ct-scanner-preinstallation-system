@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Project Report{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1>Project Report</h1>
+  <pre>{{ report|tojson(indent=2) }}</pre>
+  <a class="btn btn-secondary" href="{{ url_for('index') }}">Back to dashboard</a>
+</div>
+{% endblock %}
