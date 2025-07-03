@@ -49,3 +49,12 @@ class ScannerAnalysis:
             'total_cost': 50000,
             'recommendations': ['Room is suitable for installation']
         }
+
+    def compare_scanners(self, models):
+        """Return specification data for the selected scanner models."""
+        comparisons = []
+        for model in models:
+            specs = self.scanner_specs.get(model)
+            if specs:
+                comparisons.append({'model': model, 'specs': specs})
+        return comparisons

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Scanner Comparison{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-3">Compare CT Scanners</h2>
+    <form method="POST" class="mb-4">
+        <label for="scanner_models" class="form-label">Select models to compare</label>
+        <select name="scanner_models" id="scanner_models" multiple class="form-select">
+            {% for model in scanner_models %}
+            <option value="{{ model }}" {% if comparisons and model in [c.model for c in comparisons] %}selected{% endif %}>{{ model }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary mt-2">Compare</button>
+    </form>
+
+    {% if comparisons %}
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Specification</th>
+                    {% for comp in comparisons %}
+                    <th>{{ comp.model }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% set keys = comparisons[0].specs.keys() %}
+                {% for key in keys %}
+                <tr>
+                    <th>{{ key }}</th>
+                    {% for comp in comparisons %}
+                    <td>{{ comp.specs.get(key, 'N/A') }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
