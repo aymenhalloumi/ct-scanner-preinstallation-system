@@ -1,0 +1,787 @@
+{% extends "base.html" %}
+
+{% block title %}CT Scanner Preinstallation Verification System - Professional Biomedical Engineering{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+        background-size: cover;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .feature-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        height: 100%;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .stats-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+    }
+    
+    .stat-item {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #007bff;
+        display: block;
+    }
+    
+    .stat-label {
+        color: #6c757d;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+    
+    .neuViz-badge {
+        background: linear-gradient(135deg, #1e3a8a, #1e40af);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-left: 8px;
+    }
+    
+    .scanner-showcase {
+        background: white;
+        padding: 80px 0;
+    }
+    
+    .scanner-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 30px;
+        height: 100%;
+    }
+    
+    .scanner-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    .scanner-image {
+        width: 80px;
+        height: 80px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #007bff;
+    }
+    
+    .testimonial-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 80px 0;
+    }
+    
+    .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        position: relative;
+    }
+    
+    .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 4rem;
+        color: #007bff;
+        opacity: 0.3;
+        font-family: Georgia, serif;
+    }
+    
+    .cta-section {
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .btn-cta {
+        background: white;
+        color: #007bff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                Advanced CT Scanner Preinstallation Verification
+            </h1>
+            <p class="lead mb-5">
+                Professional biomedical engineering solution for comprehensive CT scanner room analysis, 
+                compliance verification, and installation planning with specialized NeuViz support.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                {% if not session.user_id %}
+                <a href="{{ url_for('register') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-user-plus me-2"></i>Get Started
+                </a>
+                <a href="#features" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle me-2"></i>Learn More
+                </a>
+                {% else %}
+                <a href="{{ url_for(session.role + '_dashboard') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-tachometer-alt me-2"></i>Go to Dashboard
+                </a>
+                <a href="{{ url_for('new_project') }}" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-plus me-2"></i>New Project
+                </a>
+                {% endif %}
+            </div>
+            
+            <!-- Key Features Preview -->
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt fa-3x mb-3 opacity-75"></i>
+                        <h5>IEC 60601-2-44 Compliant</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-microscope fa-3x mb-3 opacity-75"></i>
+                        <h5>7 Scanner Models Supported</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-certificate fa-3x mb-3 opacity-75"></i>
+                        <h5>NeuViz NPS-CT-0651 Certified</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <div class="stat-label">CT Scanner Models</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <div class="stat-label">Installations Verified</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">99.2%</span>
+                    <div class="stat-label">Compliance Rate</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <div class="stat-label">Expert Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5" id="features">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Comprehensive Analysis Features</h2>
+            <p class="lead text-muted">
+                Everything you need for professional CT scanner preinstallation verification
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h5 class="card-title">Compliance Analysis</h5>
+                        <p class="card-text">
+                            Comprehensive compliance checking against IEC 60601-2-44, NF C 15-211, 
+                            and ANSM regulations with automated scoring and detailed reporting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h5 class="card-title">NeuViz Specialization<span class="neuViz-badge">NPS-CT-0651</span></h5>
+                        <p class="card-text">
+                            Specialized support for NeuViz ACE and ACE SP scanners with complete 
+                            NPS-CT-0651 compliance verification and Neusoft coordination planning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h5 class="card-title">Cost Estimation</h5>
+                        <p class="card-text">
+                            Detailed cost analysis including infrastructure modifications, safety systems, 
+                            and specialized services with accurate timeline projections.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-radiation"></i>
+                        </div>
+                        <h5 class="card-title">Radiation Safety</h5>
+                        <p class="card-text">
+                            Advanced radiation shielding calculations, dose rate assessments, 
+                            and complete radioprotection compliance verification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h5 class="card-title">Environmental Control</h5>
+                        <p class="card-text">
+                            HVAC system analysis, temperature stability verification, humidity control, 
+                            and air quality assessments for optimal scanner operation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h5 class="card-title">Professional Reports</h5>
+                        <p class="card-text">
+                            Generate detailed technical reports, executive summaries, and compliance 
+                            certificates ready for regulatory submission and client presentation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Supported Scanners Section -->
+<section class="scanner-showcase" id="scanners">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Supported CT Scanner Models</h2>
+            <p class="lead text-muted">
+                Comprehensive support for major CT scanner manufacturers with specialized NeuViz expertise
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="scanner-card">
+                    <div class="scanner-image">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h5>NeuViz ACE (16-slice)<span class="neuViz-badge">NPS-CT-0651</span></h5>
+                    <p class="text-muted">
+                        Complete NPS-CT-0651 compliance verification with Neusoft engineer coordination
+                    </p>
+                    <small class="text-primary">Specialized Support Available</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="scanner-card">
+                    <div class="scanner-image">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h5>NeuViz ACE SP (32-slice)<span class="neuViz-badge">NPS-CT-0651</span></h5>
+                    <p class="text-muted">
+                        Enhanced 32-slice model with advanced compliance requirements
+                    </p>
+                    <small class="text-primary">Specialized Support Available</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="scanner-card">
+                    <div class="scanner-image">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h5>GE Optima CT660</h5>
+                    <p class="text-muted">
+                        High-performance imaging with advanced dose reduction technology
+                    </p>
+                    <small class="text-secondary">Standard IEC Compliance</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="scanner-card">
+                    <div class="scanner-image">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h5>Siemens SOMATOM X.cite</h5>
+                    <p class="text-muted">
+                        Compact design with excellent workflow optimization
+                    </p>
+                    <small class="text-secondary">Standard IEC Compliance</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="scanner-card">
+                    <div class="scanner-image">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h5>Philips Incisive CT</h5>
+                    <p class="text-muted">
+                        Precision imaging with intelligent dose management
+                    </p>
+                    <small class="text-secondary">Standard IEC Compliance</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="scanner-card">
+                    <div class="scanner-image">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h5>+ More Models</h5>
+                    <p class="text-muted">
+                        Canon Aquilion, GE Revolution EVO, and additional models supported
+                    </p>
+                    <small class="text-info">Contact for Full List</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonial-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">What Our Clients Say</h2>
+            <p class="lead text-muted">
+                Trusted by hospitals and imaging centers worldwide
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="mb-3">
+                        "The NeuViz compliance verification saved us weeks of back-and-forth with regulators. 
+                        The detailed reports were exactly what we needed for approval."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">Dr. Marie Dubois</h6>
+                            <small class="text-muted">Chief of Radiology, CHU Paris</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="mb-3">
+                        "Exceptional attention to detail and comprehensive analysis. The cost estimates 
+                        were accurate and helped us plan our budget effectively."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">Jean-Pierre Martin</h6>
+                            <small class="text-muted">Facility Manager, Clinique Lyon Sud</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="mb-3">
+                        "Professional service with deep expertise in biomedical engineering. 
+                        The team understands both technical requirements and regulatory compliance."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">Dr. Thomas Schneider</h6>
+                            <small class="text-muted">Medical Director, Klinikum Munich</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-5" id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4">Why Choose Our Platform?</h2>
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Certified Expertise</h5>
+                                <p class="text-muted">
+                                    Our team of certified biomedical engineers brings decades of experience 
+                                    in CT scanner installations and regulatory compliance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Faster Approvals</h5>
+                                <p class="text-muted">
+                                    Streamlined compliance verification process reduces approval time by up to 60% 
+                                    with comprehensive documentation and pre-validated calculations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Risk Mitigation</h5>
+                                <p class="text-muted">
+                                    Identify potential issues early in the planning phase to avoid costly 
+                                    modifications and installation delays.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <div class="bg-light rounded-3 p-5">
+                        <i class="fas fa-microscope fa-5x text-primary mb-4"></i>
+                        <h4>Professional Standards</h4>
+                        <p class="text-muted">
+                            Compliant with international standards including IEC 60601-2-44, 
+                            NF C 15-211, and specialized NeuViz NPS-CT-0651 requirements.
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="border-end">
+                                    <h3 class="text-primary mb-0">99.2%</h3>
+                                    <small class="text-muted">Success Rate</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="text-primary mb-0">24h</h3>
+                                <small class="text-muted">Response Time</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Ready to Start Your Project?</h2>
+        <p class="lead mb-5">
+            Join hundreds of healthcare facilities that trust our platform for their CT scanner installations.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            {% if not session.user_id %}
+            <a href="{{ url_for('register') }}" class="btn btn-cta btn-lg">
+                <i class="fas fa-rocket me-2"></i>Start Free Analysis
+            </a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-phone me-2"></i>Contact Expert
+            </a>
+            {% else %}
+            <a href="{{ url_for('new_project') }}" class="btn btn-cta btn-lg">
+                <i class="fas fa-plus me-2"></i>Create New Project
+            </a>
+            <a href="{{ url_for(session.role + '_dashboard') }}" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-tachometer-alt me-2"></i>Go to Dashboard
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5 bg-light" id="contact">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Get in Touch</h2>
+            <p class="lead text-muted">
+                Have questions? Our experts are here to help with your CT scanner project.
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="text-center">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <i class="fas fa-phone fa-lg"></i>
+                    </div>
+                    <h5>Phone Support</h5>
+                    <p class="text-muted">+33 1 23 45 67 89</p>
+                    <small class="text-muted">Mon-Fri 9:00-18:00 CET</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="text-center">
+                    <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <i class="fas fa-envelope fa-lg"></i>
+                    </div>
+                    <h5>Email Support</h5>
+                    <p class="text-muted">support@ct-scanner.com</p>
+                    <small class="text-muted">24h response time</small>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="text-center">
+                    <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <i class="fas fa-comments fa-lg"></i>
+                    </div>
+                    <h5>Live Chat</h5>
+                    <p class="text-muted">Instant expert assistance</p>
+                    <small class="text-muted">Available during business hours</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Counter animation for statistics
+    const observerOptions = {
+        threshold: 0.7
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.stat-number').forEach(counter => {
+        observer.observe(counter);
+    });
+    
+    function animateCounter(element) {
+        const target = element.textContent;
+        const isPercent = target.includes('%');
+        const isPlus = target.includes('+');
+        const numTarget = parseInt(target.replace(/[^\d]/g, ''));
+        
+        let current = 0;
+        const increment = numTarget / 50;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= numTarget) {
+                current = numTarget;
+                clearInterval(timer);
+            }
+            
+            let displayValue = Math.floor(current);
+            if (isPercent) displayValue += '%';
+            if (isPlus && current >= numTarget) displayValue += '+';
+            if (target.includes('/')) displayValue = target; // For "24/7"
+            
+            element.textContent = displayValue;
+        }, 20);
+    }
+    
+    // Feature cards hover effect enhancement
+    document.querySelectorAll('.feature-card, .scanner-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+</script>
+{% endblock %}
