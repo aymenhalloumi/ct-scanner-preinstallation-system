@@ -308,6 +308,17 @@ def analysis_dashboard_api():
         logger.error(f"Dashboard API error: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/scanner/comparison', methods=['GET', 'POST'])
+def scanner_comparison():
+    """Compare multiple scanner models side by side."""
+    comparisons = None
+    if request.method == 'POST':
+        selected = request.form.getlist('scanner_models')
+        comparisons = scanner_analysis.compare_scanners(selected)
+    return render_template('scanner_comparison.html',
+                           scanner_models=scanner_analysis.scanner_specs.keys(),
+                           comparisons=comparisons)
+
 @app.route('/documentation/neuViz')
 def neuViz_documentation():
     """NeuViz documentation page."""
