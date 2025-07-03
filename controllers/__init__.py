@@ -7,13 +7,15 @@ Handles business logic and application flow
 from .authentification import Authentication
 from .project import Project as ProjectController
 from .scanner_analysis import ScannerAnalysis
+from .scanner_comparison import ScannerComparison
 from .client import Client
 from .engineer import Engineer
 from .report import ReportGenerator
 
 __all__ = [
     'Authentication',
-    'ScannerAnalysis', 
+    'ScannerAnalysis',
+    'ScannerComparison',
     'ProjectController',
     'Client',
     'Engineer',
