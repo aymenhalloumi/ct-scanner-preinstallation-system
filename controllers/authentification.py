@@ -1,351 +1,188 @@
 import csv
 import os
-import hashlib
-from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from config import Config
 
 class Authentication:
-    """Enhanced authentication system for CT Scanner Verification System."""
-    
-    def __init__(self):
-        self.users_file = Config.USERS_FILE
-        self.ensure_users_file_exists()
-    
-    def ensure_users_file_exists(self):
-        """Ensure users.csv file exists with proper headers."""
+    def __init__(self, users_file='users.csv'):
+        self.users_file = users_file
+        self.ensure_csv_structure()
+
+    def ensure_csv_structure(self):
+        """Ensure the CSV file exists with proper header."""
         if not os.path.exists(self.users_file):
-            os.makedirs(os.path.dirname(self.users_file), exist_ok=True)
             with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
-                writer.writerow([
-                    'id', 'username', 'password_hash', 'role', 'email', 
-                    'company', 'created_date', 'last_login', 'is_active', 'profile_data'
-                ])
-    
-    def create_default_admin(self):
-        """Create default admin user if none exists."""
-        if not self.user_exists('admin'):
-            admin_data = {
-                'username': 'admin',
-                'password': 'admin123',  # Change this in production!
-                'role': 'admin',
-                'email': 'admin@ct-scanner-system.com',
-                'company': 'System Administration'
-            }
-            self.register_user(**admin_data)
-            print("✅ Default admin user created (username: admin, password: admin123)")
-    
-    def generate_user_id(self):
-        """Generate unique user ID."""
-        try:
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                next(reader)  # Skip header
-                user_ids = [int(row[0]) for row in reader if row and row[0].isdigit()]
-                return max(user_ids) + 1 if user_ids else 1001
-        except (FileNotFoundError, ValueError):
-            return 1001
-    
+                writer.writerow(['id', 'username', 'password', 'role', 'email', 'company', 'created_at'])
+        else:
+            # Check if file is empty and add header if needed
+            try:
+                with open(self.users_file, 'r', encoding='utf-8') as file:
+                    content = file.read().strip()
+                    if not content:
+                        with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
+                            writer = csv.writer(file)
+                            writer.writerow(['id', 'username', 'password', 'role', 'email', 'company', 'created_at'])
+            except Exception as e:
+                print(f"Error checking CSV structure: {e}")
+
     def user_exists(self, username):
         """Check if username already exists."""
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 reader = csv.reader(file)
-                next(reader)  # Skip header
+                
+                # Safely skip header with default value
+                header = next(reader, None)
+                if header is None:
+                    return False  # Empty file
+                
                 for row in reader:
                     if row and len(row) >= 2 and row[1].lower() == username.lower():
                         return True
         except FileNotFoundError:
+            # Create the file if it doesn't exist
+            self.ensure_csv_structure()
+            return False
+        except Exception as e:
+            print(f"Error checking user existence: {e}")
             return False
         return False
-    
+
     def register_user(self, username, password, role, email='', company=''):
         """Register new user with enhanced profile data."""
-        if self.user_exists(username):
-            return False
-        
-        # Validate role
-        if role not in ['client', 'engineer', 'admin']:
-            return False
-        
-        user_id = self.generate_user_id()
-        password_hash = generate_password_hash(password)
-        created_date = datetime.now().isoformat()
-        
-        # Enhanced profile data
-        profile_data = {
-            'registration_ip': 'system',
-            'preferences': {
-                'language': 'fr',
-                'timezone': 'Europe/Paris',
-                'notifications': True
-            },
-            'specializations': [] if role != 'engineer' else ['CT_SCANNERS'],
-            'certifications': [],
-            'contact_preferences': 'email'
-        }
-        
         try:
+            # Validate inputs
+            if not username or not password or not role:
+                return False
+            
+            if self.user_exists(username):
+                return False
+
+            # Validate role
+            valid_roles = ['client', 'engineer', 'admin', 'patient', 'receptionist']
+            if role not in valid_roles:
+                return False
+
+            # Generate user ID
+            user_id = self.get_next_user_id()
+            
+            # Hash password
+            hashed_password = generate_password_hash(password)
+            
+            # Get current timestamp
+            from datetime import datetime
+            created_at = datetime.now().isoformat()
+
+            # Write to CSV
             with open(self.users_file, 'a', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
-                writer.writerow([
-                    user_id, username, password_hash, role, email, 
-                    company, created_date, '', True, str(profile_data)
-                ])
+                writer.writerow([user_id, username, hashed_password, role, email, company, created_at])
+            
             return True
+            
         except Exception as e:
-            print(f"Registration error: {e}")
+            print(f"Error registering user: {e}")
             return False
-    
-    def login_user(self, username, password):
-        """Authenticate user and return user data."""
+
+    def get_next_user_id(self):
+        """Get the next available user ID."""
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 reader = csv.reader(file)
-                next(reader)  # Skip header
+                next(reader, None)  # Skip header safely
+                
+                max_id = 0
+                for row in reader:
+                    if row and len(row) >= 1:
+                        try:
+                            user_id = int(row[0])
+                            max_id = max(max_id, user_id)
+                        except (ValueError, IndexError):
+                            continue
+                
+                return max_id + 1
+        except FileNotFoundError:
+            return 1
+        except Exception:
+            return 1
+
+    def login_user(self, username, password):
+        """Authenticate user and return user info."""
+        try:
+            with open(self.users_file, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                next(reader, None)  # Skip header safely
                 
                 for row in reader:
-                    if row and len(row) >= 9:
-                        stored_id, stored_username, stored_hash, role, email, company, created_date, last_login, is_active = row[:9]
+                    if row and len(row) >= 4:
+                        stored_id, stored_username, stored_password, stored_role = row[0], row[1], row[2], row[3]
                         
-                        if (stored_username.lower() == username.lower() and 
-                            check_password_hash(stored_hash, password) and 
-                            is_active.lower() == 'true'):
-                            
-                            # Update last login
-                            self.update_last_login(stored_id)
-                            
-                            return {
-                                'id': stored_id,
-                                'username': stored_username,
-                                'role': role,
-                                'email': email,
-                                'company': company,
-                                'created_date': created_date
-                            }
+                        if stored_username.lower() == username.lower():
+                            if check_password_hash(stored_password, password):
+                                return {
+                                    'id': stored_id,
+                                    'username': stored_username,
+                                    'role': stored_role,
+                                    'email': row[4] if len(row) > 4 else '',
+                                    'company': row[5] if len(row) > 5 else ''
+                                }
         except FileNotFoundError:
-            pass
+            return None
+        except Exception as e:
+            print(f"Error during login: {e}")
+            return None
         
         return None
-    
-    def update_last_login(self, user_id):
-        """Update user's last login timestamp."""
-        try:
-            users = []
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                users = list(reader)
-            
-            # Update the specific user's last login
-            for i, row in enumerate(users):
-                if i == 0:  # Skip header
-                    continue
-                if row and row[0] == str(user_id):
-                    row[7] = datetime.now().isoformat()  # last_login column
-                    break
-            
-            # Write back to file
-            with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
-                writer.writerows(users)
-                
-        except Exception as e:
-            print(f"Error updating last login: {e}")
-    
+
     def get_user_by_id(self, user_id):
-        """Get user data by ID."""
+        """Get user information by ID."""
         try:
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 reader = csv.reader(file)
-                next(reader)  # Skip header
+                next(reader, None)  # Skip header safely
                 
                 for row in reader:
-                    if row and row[0] == str(user_id):
+                    if row and len(row) >= 4 and row[0] == str(user_id):
                         return {
                             'id': row[0],
                             'username': row[1],
                             'role': row[3],
-                            'email': row[4],
-                            'company': row[5],
-                            'created_date': row[6],
-                            'last_login': row[7],
-                            'is_active': row[8]
+                            'email': row[4] if len(row) > 4 else '',
+                            'company': row[5] if len(row) > 5 else ''
                         }
-        except FileNotFoundError:
-            pass
+        except Exception as e:
+            print(f"Error getting user by ID: {e}")
         
         return None
-    
-    def get_all_users(self):
-        """Get all users (admin function)."""
-        users = []
+
+    def update_user(self, user_id, **kwargs):
+        """Update user information."""
         try:
+            rows = []
+            updated = False
+            
             with open(self.users_file, 'r', encoding='utf-8') as file:
                 reader = csv.reader(file)
-                next(reader)  # Skip header
+                header = next(reader, ['id', 'username', 'password', 'role', 'email', 'company', 'created_at'])
+                rows.append(header)
                 
                 for row in reader:
-                    if row and len(row) >= 9:
-                        users.append({
-                            'id': row[0],
-                            'username': row[1],
-                            'role': row[3],
-                            'email': row[4],
-                            'company': row[5],
-                            'created_date': row[6],
-                            'last_login': row[7],
-                            'is_active': row[8]
-                        })
-        except FileNotFoundError:
-            pass
-        
-        return users
-    
-    def update_user_profile(self, user_id, profile_data):
-        """Update user profile information."""
-        try:
-            users = []
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                users = list(reader)
+                    if row and len(row) >= 4 and row[0] == str(user_id):
+                        # Update the row
+                        if 'email' in kwargs and len(row) > 4:
+                            row[4] = kwargs['email']
+                        if 'company' in kwargs and len(row) > 5:
+                            row[5] = kwargs['company']
+                        updated = True
+                    rows.append(row)
             
-            # Find and update user
-            for i, row in enumerate(users):
-                if i == 0:  # Skip header
-                    continue
-                if row and row[0] == str(user_id):
-                    # Update fields
-                    if 'email' in profile_data:
-                        row[4] = profile_data['email']
-                    if 'company' in profile_data:
-                        row[5] = profile_data['company']
-                    break
+            if updated:
+                with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
+                    writer = csv.writer(file)
+                    writer.writerows(rows)
             
-            # Write back to file
-            with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
-                writer.writerows(users)
-            
-            return True
+            return updated
             
         except Exception as e:
-            print(f"Error updating user profile: {e}")
+            print(f"Error updating user: {e}")
             return False
-    
-    def deactivate_user(self, user_id):
-        """Deactivate user account (admin function)."""
-        try:
-            users = []
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                users = list(reader)
-            
-            # Find and deactivate user
-            for i, row in enumerate(users):
-                if i == 0:  # Skip header
-                    continue
-                if row and row[0] == str(user_id):
-                    row[8] = 'False'  # is_active
-                    break
-            
-            # Write back to file
-            with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
-                writer.writerows(users)
-            
-            return True
-            
-        except Exception as e:
-            print(f"Error deactivating user: {e}")
-            return False
-    
-    def change_password(self, user_id, current_password, new_password):
-        """Change user password."""
-        # First verify current password
-        user = self.get_user_by_id(user_id)
-        if not user:
-            return False
-        
-        # Get current password hash
-        try:
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                next(reader)  # Skip header
-                
-                for row in reader:
-                    if row and row[0] == str(user_id):
-                        if not check_password_hash(row[2], current_password):
-                            return False
-                        break
-                else:
-                    return False
-            
-            # Update password
-            users = []
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                users = list(reader)
-            
-            # Find and update password
-            for i, row in enumerate(users):
-                if i == 0:  # Skip header
-                    continue
-                if row and row[0] == str(user_id):
-                    row[2] = generate_password_hash(new_password)
-                    break
-            
-            # Write back to file
-            with open(self.users_file, 'w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
-                writer.writerows(users)
-            
-            return True
-            
-        except Exception as e:
-            print(f"Error changing password: {e}")
-            return False
-    
-    def get_user_statistics(self):
-        """Get user statistics for admin dashboard."""
-        stats = {
-            'total_users': 0,
-            'active_users': 0,
-            'clients': 0,
-            'engineers': 0,
-            'admins': 0,
-            'recent_registrations': 0
-        }
-        
-        try:
-            with open(self.users_file, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                next(reader)  # Skip header
-                
-                for row in reader:
-                    if row and len(row) >= 9:
-                        stats['total_users'] += 1
-                        
-                        if row[8].lower() == 'true':
-                            stats['active_users'] += 1
-                        
-                        role = row[3].lower()
-                        if role == 'client':
-                            stats['clients'] += 1
-                        elif role == 'engineer':
-                            stats['engineers'] += 1
-                        elif role == 'admin':
-                            stats['admins'] += 1
-                        
-                        # Check if registered in last 30 days
-                        try:
-                            created_date = datetime.fromisoformat(row[6])
-                            if (datetime.now() - created_date).days <= 30:
-                                stats['recent_registrations'] += 1
-                        except:
-                            pass
-                            
-        except FileNotFoundError:
-            pass
-        
-        return stats

@@ -183,3 +183,368 @@
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.100.192:5000
 2025-07-03 10:14:05,850 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 10:33:45,373 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 10:33:45,375 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 10:33:55,512 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:33:55] "GET / HTTP/1.1" 200 -
+2025-07-03 10:33:57,483 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:33:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 10:33:57,483 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:33:57] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 10:33:59,140 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:33:59] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 10:33:59,547 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:33:59] "[33mGET /static/images/favicon.ico HTTP/1.1[0m" 404 -
+2025-07-03 10:34:08,353 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:08] "GET /register HTTP/1.1" 200 -
+2025-07-03 10:34:08,448 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:08] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 10:34:08,620 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-03 10:34:54,262 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:54] "GET / HTTP/1.1" 200 -
+2025-07-03 10:34:54,376 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:54] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 10:34:54,377 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 10:34:54,415 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:34:54] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 10:35:17,613 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 10:35:17,614 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 10:56:34,419 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 10:56:34,420 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 10:56:42,273 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:56:42] "GET / HTTP/1.1" 200 -
+2025-07-03 10:56:42,796 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:56:42] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 10:56:42,797 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:56:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 10:56:43,179 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:56:43] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 10:56:48,927 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:56:48] "GET /register HTTP/1.1" 200 -
+2025-07-03 10:56:48,987 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 10:56:48] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:00:12,775 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 11:00:12,775 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:39:00,456 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 11:39:00,457 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:39:12,216 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:39:12] "GET / HTTP/1.1" 200 -
+2025-07-03 11:39:12,699 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:39:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 11:39:12,702 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:39:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:39:12,980 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:39:12] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 11:39:26,634 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:39:26] "GET /register HTTP/1.1" 200 -
+2025-07-03 11:39:26,842 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:39:26] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:40:06,096 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 11:40:06,099 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:48:50,844 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 11:48:50,844 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:48:57,851 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:48:57] "GET / HTTP/1.1" 200 -
+2025-07-03 11:48:58,037 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:48:58] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:48:58,038 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:48:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 11:48:58,212 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:48:58] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 11:49:01,316 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:49:01] "GET /register HTTP/1.1" 200 -
+2025-07-03 11:49:01,351 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:49:01] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:53:35,943 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 11:53:35,944 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:54:10,363 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 11:54:10,364 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:54:18,714 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:54:18] "GET / HTTP/1.1" 200 -
+2025-07-03 11:54:19,210 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:54:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 11:54:19,211 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:54:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:54:19,631 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:54:19] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 11:54:27,350 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:54:27] "GET /register HTTP/1.1" 200 -
+2025-07-03 11:54:27,399 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:54:27] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:55:32,183 - app - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 102, in register
+    success = authentication.register_user(username, password, role, email, company)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 65, in register_user
+    if self.user_exists(username):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 55, in user_exists
+    next(reader)  # Skip header
+StopIteration
+2025-07-03 11:55:32,192 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 11:55:32,200 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:55:32] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-07-03 11:55:52,438 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:55:52] "GET /login HTTP/1.1" 200 -
+2025-07-03 11:55:52,512 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:55:52] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 11:55:52,512 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:55:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 11:55:52,564 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:55:52] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 11:55:59,296 - app - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 119, in login
+    user = authentication.login_user(username, password)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 106, in login_user
+    next(reader)  # Skip header
+StopIteration
+2025-07-03 11:55:59,300 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 11:55:59,301 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 11:55:59] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-07-03 12:02:37,243 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 12:02:37,244 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:34:00,010 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 12:34:00,011 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:34:13,608 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:13] "GET / HTTP/1.1" 200 -
+2025-07-03 12:34:14,081 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 12:34:14,082 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 12:34:14,392 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:14] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 12:34:20,850 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:20] "GET /register HTTP/1.1" 200 -
+2025-07-03 12:34:20,931 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 12:34:56,395 - app - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 102, in register
+    success = authentication.register_user(username, password, role, email, company)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 65, in register_user
+    if self.user_exists(username):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 55, in user_exists
+    next(reader)  # Skip header
+StopIteration
+2025-07-03 12:34:56,402 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 12:34:56,407 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:34:56] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-07-03 12:48:07,522 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 12:48:07,523 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:48:29,035 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 12:48:29,035 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:48:35,981 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:48:35] "GET / HTTP/1.1" 200 -
+2025-07-03 12:48:36,188 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:48:36] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 12:48:36,189 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:48:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 12:48:36,358 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:48:36] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 12:48:39,856 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:48:39] "GET /register HTTP/1.1" 200 -
+2025-07-03 12:48:39,917 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:48:39] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 12:49:09,624 - app - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 102, in register
+    success = authentication.register_user(username, password, role, email, company)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 65, in register_user
+    if self.user_exists(username):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\controllers\authentification.py", line 55, in user_exists
+    next(reader)  # Skip header
+StopIteration
+2025-07-03 12:49:09,630 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 12:49:09,633 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:49:09] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-07-03 12:50:51,449 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 12:50:51,450 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:51:18,650 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 12:51:18,651 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:51:21,723 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 12:51:21,724 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 12:51:37,024 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:37] "GET / HTTP/1.1" 200 -
+2025-07-03 12:51:37,217 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 12:51:37,219 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:37] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 12:51:37,365 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:37] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 12:51:38,667 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:38] "GET /register HTTP/1.1" 200 -
+2025-07-03 12:51:38,765 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:38] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 12:51:58,280 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:58] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-07-03 12:51:58,328 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:58] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-03 12:51:58,329 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:58] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-03 12:51:58,373 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:58] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-03 12:51:58,425 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 12:51:58] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-03 13:07:33,020 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 13:07:33,021 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 13:07:38,931 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:38] "GET / HTTP/1.1" 200 -
+2025-07-03 13:07:39,056 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:39] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:07:39,058 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:07:39,212 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:39] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:07:44,341 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:44] "GET /login HTTP/1.1" 200 -
+2025-07-03 13:07:44,409 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:44] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:07:44,410 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:07:44,459 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:44] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:07:58,898 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:58] "POST /login HTTP/1.1" 200 -
+2025-07-03 13:07:58,947 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:58] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:07:58,950 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:07:58,972 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:07:58] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:09,698 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:09] "POST /login HTTP/1.1" 200 -
+2025-07-03 13:08:09,746 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:09] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:09,747 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:09,775 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:09] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:20,169 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-07-03 13:08:20,191 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:20] "GET /admin/dashboard HTTP/1.1" 200 -
+2025-07-03 13:08:20,246 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:20,248 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:20,269 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:20] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:24,542 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:24] "GET /admin/dashboard HTTP/1.1" 200 -
+2025-07-03 13:08:24,591 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:24] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:24,592 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:24,605 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:24] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:35,217 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:35] "GET /admin/dashboard HTTP/1.1" 200 -
+2025-07-03 13:08:35,273 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:35,274 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:35,288 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:35] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:42,330 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:42] "GET /documentation/neuViz HTTP/1.1" 200 -
+2025-07-03 13:08:42,389 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:42] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:42,392 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:42,411 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:42] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:51,503 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:51] "[32mGET / HTTP/1.1[0m" 302 -
+2025-07-03 13:08:51,524 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:51] "GET /admin/dashboard HTTP/1.1" 200 -
+2025-07-03 13:08:51,583 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:51] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:51,583 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:51,612 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:51] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:08:56,927 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:56] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-07-03 13:08:56,943 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:56] "GET / HTTP/1.1" 200 -
+2025-07-03 13:08:57,010 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:57] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:08:57,014 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:08:57,038 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:08:57] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:09:02,270 - app - ERROR - Exception on /register [GET]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 109, in register
+    return render_template('register.html')
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\register.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\base.html", line 177, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\register.html", line 99, in block 'content'
+    <a href="{{ url_for('main_dashboard') }}" class="btn btn-outline-secondary btn-sm">
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main_dashboard'. Did you mean 'admin_dashboard' instead?
+2025-07-03 13:09:02,275 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 13:09:02,277 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:02] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2025-07-03 13:09:08,247 - app - ERROR - Exception on /register [GET]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 109, in register
+    return render_template('register.html')
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\register.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\base.html", line 177, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\register.html", line 99, in block 'content'
+    <a href="{{ url_for('main_dashboard') }}" class="btn btn-outline-secondary btn-sm">
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main_dashboard'. Did you mean 'admin_dashboard' instead?
+2025-07-03 13:09:08,249 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 13:09:08,250 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:08] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2025-07-03 13:09:10,394 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:10] "GET / HTTP/1.1" 200 -
+2025-07-03 13:09:10,446 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:09:10,450 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:09:10,477 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:10] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:09:11,841 - app - ERROR - Exception on /register [GET]
+Traceback (most recent call last):
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\app.py", line 109, in register
+    return render_template('register.html')
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\templating.py", line 152, in render_template
+    return _render(app, template, context)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\templating.py", line 133, in _render
+    rv = template.render(context)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\register.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\base.html", line 177, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\pro\ct-scanner-preinstallation-system\templates\register.html", line 99, in block 'content'
+    <a href="{{ url_for('main_dashboard') }}" class="btn btn-outline-secondary btn-sm">
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1071, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\flask\app.py", line 1060, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\pro\ct-scanner-preinstallation-system\venv\lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main_dashboard'. Did you mean 'admin_dashboard' instead?
+2025-07-03 13:09:11,843 - __main__ - ERROR - Internal error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-03 13:09:11,844 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:11] "[35m[1mGET /register HTTP/1.1[0m" 500 -
+2025-07-03 13:09:13,332 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:13] "GET / HTTP/1.1" 200 -
+2025-07-03 13:09:13,385 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:13] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-07-03 13:09:13,389 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-07-03 13:09:13,407 - werkzeug - INFO - 127.0.0.1 - - [03/Jul/2025 13:09:13] "[33mGET /api/scanner-specifications HTTP/1.1[0m" 404 -
+2025-07-03 13:09:30,318 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.192:5000
+2025-07-03 13:09:30,318 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

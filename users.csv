@@ -1,0 +1,2 @@
+id,username,password,role,email,company,created_at
+1,admin,scrypt:32768:8:1$8j2Sf4gT4nGfSIi0$2e5386fc26f0ef4f489b82e770907d2d3a09a055028eeca38d851651123b33b7f1b0c9f180422f727e7190a271ca6d810c281792bbc548cf2ae6fd438fa4d5d4,admin,admin@hospital.com,Hospital System,2025-07-03T13:07:20.537277
