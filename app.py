@@ -17,6 +17,7 @@ from controllers.client import Client
 from controllers.engineer import Engineer
 from controllers.project import Project
 from controllers.scanner_analysis import ScannerAnalysis
+from controllers.scanner_comparison import ScannerComparison
 from controllers.report import ReportGenerator
 from config import Config
 
@@ -44,6 +45,7 @@ logger = logging.getLogger(__name__)
 # Initialize controllers
 authentication = Authentication()
 scanner_analysis = ScannerAnalysis()
+scanner_comparison = ScannerComparison()
 report_generator = ReportGenerator()
 
 # Utility function
@@ -264,7 +266,20 @@ def scanner_analysis_page(project_id):
     
     return render_template('scanner_analysis.html', 
                          project=project_data,
-                         scanner_specs=scanner_analysis.scanner_specs)
+                        scanner_specs=scanner_analysis.scanner_specs)
+
+@app.route('/scanner/compare', methods=['GET', 'POST'])
+def scanner_compare():
+    """Compare multiple CT scanner models side by side."""
+    selected = []
+    comparisons = None
+    if request.method == 'POST':
+        selected = request.form.getlist('models')[:3]
+        comparisons = scanner_comparison.compare_scanners(selected)
+    return render_template('scanner_compare.html',
+                           scanner_models=scanner_analysis.scanner_specs.keys(),
+                           selected_models=selected,
+                           comparisons=comparisons)
 
 @app.route('/reports/<int:project_id>')
 def view_report(project_id):
