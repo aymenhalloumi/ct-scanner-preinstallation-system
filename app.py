@@ -89,14 +89,19 @@ def register():
     if request.method == 'POST':
         username = request.form['username'].strip()
         password = request.form['password']
+        confirm_password = request.form.get('confirm_password')
         role = request.form['role']
         email = request.form.get('email', '').strip()
         company = request.form.get('company', '').strip()
-        
+
         if not username or not password or not role:
             flash('All required fields must be filled.', 'danger')
             return redirect(url_for('register'))
-        
+
+        if password != confirm_password:
+            flash('Passwords do not match.', 'danger')
+            return redirect(url_for('register'))
+
         success = authentication.register_user(username, password, role, email, company)
         if success:
             flash('Registration successful! Please login.', 'success')
