@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}New Project{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1>Create New Project</h1>
+  <form method="post">
+    <!-- Basic fields -->
+    <div class="mb-3">
+      <label for="project_name" class="form-label">Project Name</label>
+      <input type="text" class="form-control" id="project_name" name="project_name" required>
+    </div>
+    <div class="mb-3">
+      <label for="scanner_model" class="form-label">Scanner Model</label>
+      <select id="scanner_model" name="scanner_model" class="form-select">
+        {% for model in scanner_models %}
+        <option value="{{ model }}">{{ model }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+</div>
+{% endblock %}
