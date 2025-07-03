@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Engineer Dashboard{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1 class="mb-4">Engineer Dashboard</h1>
+  <h2 class="h4">Assigned Projects</h2>
+  {% if projects %}
+  <table class="table table-striped mb-5">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Scanner</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in projects %}
+      <tr>
+        <td>{{ p.project_name }}</td>
+        <td>{{ p.scanner_model }}</td>
+        <td>{{ p.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No assigned projects.</p>
+  {% endif %}
+  <h2 class="h4">Pending Analyses</h2>
+  {% if pending_analyses %}
+  <ul class="list-group">
+    {% for p in pending_analyses %}
+    <li class="list-group-item">{{ p.project_name }} - {{ p.scanner_model }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No pending analyses.</p>
+  {% endif %}
+</div>
+{% endblock %}
